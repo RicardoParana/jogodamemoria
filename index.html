@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da memória</title>
+  <!-- link css -->
+  <link rel="stylesheet" href="./src/style/reset.css">
+  <link rel="stylesheet" href="./src/style/main.css">
+</head>
+<body>
+ <div class="container">
+  <h2>Jogo da memoria</h2>
+  <div class="game" id="gameBoard"></div>
+  <button class="reset"
+  onclick="window.location.reload()"
+  >RESET GAME</button>
+  <div id="timer">Tempo Restante: 60s</div>
+  <div id="gameBoard"></div>
+<!-- jogando -->
+  <audio id="backgroundMusic" loop controls>
+    <source  id="audioSource1"  src="./src/audio/final1.mp3" type="audio/mp3">
+    <source  id="audioSource2"  src="./src/audio/final2.mp3" type="audio/mp3">
+    <source  id="audioSource7"  src="./src/audio/final3.mp3" type="audio/mp3">
+    <source  id="audioSource3"  src="./src/audio/final4.mp3" type="audio/mp3">
+    <source  id="audioSource1"  src="./src/audio/final1.mp3" type="audio/mp3">
+    <source  id="audioSource4"  src="./src/audio/final5.mp3" type="audio/mp3">
+    <source  id="audioSource8"  src="./src/audio/final6.mp3" type="audio/mp3">
+    <source  id="audioSource5"  src="./src/audio/final7.mp3" type="audio/mp3">
+    <source  id="audioSource9"  src="./src/audio/final8.mp3" type="audio/mp3">
+    <source  id="audioSource6"  src="./src/audio/final9.mp3" type="audio/mp3">
+  </audio>
+  <!-- **********acertos*********** -->
+
+  <audio class="soundEffect" id="correctSound1" src="./src/audio/acertou1.mp3"></audio>
+  <audio class="soundEffect" id="correctSound2" src="./src/audio/acertou2.mp3"></audio>
+  <audio class="soundEffect" id="correctSound3" src="./src/audio/acertou3.mp3"></audio>
+<audio class="soundEffect" id="correctSound4" src="./src/audio/acertou4.mp3"></audio>
+ <!-- **********erros*********** -->
+ <audio class="soundEffect" id="wrongSound1" src="./src/audio/errou1.mp3"></audio>
+<audio class="soundEffect" id="wrongSound2" src="./src/audio/errou2.mp3"></audio>
+<audio class="soundEffect" id="wrongSound3" src="./src/audio/errou3.mp3"></audio>
+<audio class="soundEffect" id="wrongSound4" src="./src/audio/errou4.mp3"></audio>
+<audio class="soundEffect" id="wrongSound5" src="./src/audio/errou5.mp3"></audio>
+<!-- perdeu -->
+<audio id="timeUpSound" class="soundEffect" id="wrongSound5" src="./src/audio/faliu.mp3"></audio>
+<audio id="timeUpSound1" class="soundEffect" id="wrongSound5" src="./src/audio/perdeu1.mp3"></audio>
+
+<!-- Adicione mais sons de acerto conforme necessário -->
+ </div>
+  <script src="./src/script/engine.js" defer ></script>
+ 
+</body>
+</html>

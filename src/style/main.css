@@ -1,0 +1,265 @@
+body{
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background:#3789d1 ;
+  user-select: none;
+}
+
+.container{
+  min-width: 280px;
+  padding: 40px 60px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(325deg,
+  #03001e 0%,
+  #7303c0 30%,
+  #ec38bc 70%,
+  #fdeff9 100%);
+}
+
+h2{
+  font-size: 3em;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.reset{
+  text-transform: uppercase;
+  padding:15px 20px;
+  border-radius: 8px;
+  width: 100%;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reset:focus{
+  color: #ec38bc;
+  background-color:#262809 ;
+
+}
+
+.game{
+  width: 430px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  /* opacity: 90%; */
+}
+
+.item {
+  width: 20%;
+  padding-bottom: 10px;
+  font-size: 5em;
+  /* border: 5px solid rgb(88, 245, 10); */
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #fff; */
+  transform: rotateY(180deg);
+  transition: 0.25s;
+}
+
+ 
+.item img {
+
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item::after{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background:#404040 ;
+  
+  transition: 0.25s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+}
+
+.item.boxOpen{
+transform: rotateY(0deg)
+}
+
+.boxOpen::after,
+.boxMatch::after{
+transform:rotateY(180deg);
+}
+
+
+.boxOpen,
+.boxMatch {
+  transform: scale(1.05);
+}
+
+.boxOpen {
+  background-color: #e0e0e0;
+}
+
+.boxMatch {
+  /* background-color: #8aff8a; */
+  pointer-events: none; /* Evita cliques adicionais nas cartas correspondentes */
+  transform: scale(1.05);
+}
+
+#timer,
+#gameBoard {
+  font-size: 2em;
+  color: #fff;
+}
+audio{
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fc1e8a;
+    user-select: none;
+  }
+
+  .container {
+    padding: 40px 60px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+  
+    background: linear-gradient(
+      325deg,
+      #03001e 0%,
+      #7303c0 30%,
+      #ec38bc 70%,
+      #fdeff9 100%
+    );
+    overflow: hidden;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .reset {
+    order: 2;
+    text-transform: uppercase;
+    margin-top: 50px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .reset:focus {
+    color: #ec38bc;
+    background-color: #262809;
+  }
+
+  .game {
+    order: 1;
+    padding: 10px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    justify-content: center;
+    align-items: start;
+    transform-style: preserve-3d;
+    perspective: 800px;
+  }
+
+  .item {
+    border-radius: 7px;
+    width: 23vw; /* ou outra unidade vw desejada */
+    height: 12vh; /* ou outra unidade vh desejada */
+    font-size: 3em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+  }
+
+  .item img {
+    border-radius: 7px;
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .item::after {
+    content: "";
+    border-radius: 7px;
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+  }
+
+  .item.boxOpen {
+    transform: rotateY(0deg);
+  }
+
+  .boxOpen::after,
+  .boxMatch::after {
+    transform: rotateY(180deg);
+  }
+
+  .boxOpen,
+  .boxMatch {
+    transform: scale(1.05);
+  }
+
+  .boxOpen {
+    background-color: #e0e0e0;
+  }
+
+  .boxMatch {
+    pointer-events: none;
+    transform: scale(1.05);
+  }
+}
